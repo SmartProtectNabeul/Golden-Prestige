@@ -41,7 +41,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
-#nex{
+
+#nex {
     color: var(--clr-gold);
 }
 
