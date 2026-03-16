@@ -312,7 +312,6 @@ h6 {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     border: 1px solid rgba(212, 175, 55, 0.1);
-    group: item;
 }
 
 .gallery-item:hover {
@@ -542,4 +541,167 @@ footer p {
     .glass-panel {
         padding: 2.5rem 1.5rem;
     }
+}
+
+/* =========================================================================
+   TOP CONTACT BAR
+   ========================================================================= */
+.top-contact-bar {
+    background-color: var(--clr-bg-surface);
+    color: var(--clr-text);
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001; /* Above navbar */
+    font-weight: 500;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.top-bar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.contact-info a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--clr-text-muted);
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--clr-gold);
+}
+
+.top-bar-action .btn-whatsapp-small {
+    background-color: var(--clr-whatsapp);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.top-bar-action .btn-whatsapp-small:hover {
+    background-color: transparent;
+    border: 1px solid var(--clr-whatsapp);
+    color: var(--clr-whatsapp);
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+}
+
+.navbar.with-top-bar {
+    top: 40px; /* Offset for top bar */
+}
+
+/* =========================================================================
+   PAGE HEADER (À Propos)
+   ========================================================================= */
+.page-header {
+    height: 40vh;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-image: url('server.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    margin-top: 40px; /* offset top bar */
+}
+
+.header-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.7);
+    z-index: 1;
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 2rem;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    color: var(--clr-gold);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    color: var(--clr-text);
+}
+
+/* =========================================================================
+   MASONRY GALLERY
+   ========================================================================= */
+.photo-gallery-section {
+    padding: var(--section-padding);
+    background-color: var(--clr-bg);
+}
+
+.masonry-gallery {
+    column-count: 3;
+    column-gap: 1.5rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    position: relative;
+    background-color: var(--clr-bg-surface);
+}
+
+.masonry-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.masonry-item:hover img {
+    transform: scale(1.05);
+}
+
+.mt-4 { margin-top: 1rem; }
+.text-center { text-align: center; }
+.max-w-3xl { max-width: 48rem; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.text-muted { color: var(--clr-text-muted); }
+
+@media (max-width: 900px) {
+    .masonry-gallery { column-count: 2; }
+}
+@media (max-width: 600px) {
+    .masonry-gallery { column-count: 1; }
+    .page-header h1 { font-size: 2.2rem; }
+    .top-contact-bar { display: none; }
+    .navbar.with-top-bar { top: 0; }
+    .page-header { margin-top: 0; }
 }
