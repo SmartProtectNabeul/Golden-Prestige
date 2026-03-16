@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Prestige</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="golden.png" alt="Golden Prestige Logo" class="nav-logo-img">
+                <span class="nav-logo-text">GOLDEN PRESTIGE</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#contact" class="btn-primary">Contactez-nous</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero"
+        style="background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url('first.png');">
+        <div class="hero-content">
+            <h1 class="fade-in-up">Golden Prestige</h1>
+            <p class="fade-in-up delay-1">Équipe des serveurs qualifiés et formées pour vos événements.</p>
+            <div class="hero-buttons fade-in-up delay-2">
+                <a href="#services" class="btn-outline">Découvrir</a>
+                <a href="#contact" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Réserver
+                </a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Showcase Services Section -->
+    <section id="services" class="collection">
+        <div class="section-header">
+            <h2 class="slide-in">Nos Services</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="gallery-grid">
+            <!-- Service 1 -->
+            <div class="gallery-item zoom-in">
+                <div class="img-placeholder" style="background-image: url('first.png');"></div>
+                <div class="item-details">
+                    <p>Bienvenue🍷<br>Tout les goût du jus disponible chez golden prestige<br></p>
+                </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="gallery-item zoom-in delay-1">
+                <div class="img-placeholder" style="background-image: url('second.png');"></div>
+                <div class="item-details">
+                    <p>chez golden prestige❤️❤️<br>
+                        Location matériel pour vos événements🍽️🍴</p>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="gallery-item zoom-in delay-2">
+                <div class="img-placeholder" style="background-image: url('last.png');"></div>
+                <div class="item-details">
+                    <p>Gagner beaucoup de temps.<br>C'est le plus beau jour de votre vie,
+                        alors profitez de celui-ci et oubliez les prises de tête !</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact Section -->
+    <section id="contact" class="cta-section">
+        <div class="cta-box glass-panel reveal-up">
+            <h2>Prêt pour votre événement ?</h2>
+            <p>Contactez notre équipe directement via WhatsApp pour toute demande de renseignements, tarifs et services
+                personnalisés.</p>
+            <a href="https://wa.me/+21652603839" target="_blank" class="btn-whatsapp large" id="whatsapp-link-footer">
+                <i class="fab fa-whatsapp"></i> Discuter sur WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">GOLDEN PRESTIGE</div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/goldenprestige___" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2026 Golden Prestige. Tous Droits Réservés.</p>
+            <p>Site Créé par <a id="nex" href="https://www.instagram.com/nexusdev.tn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">NexusDev.tn</a></p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

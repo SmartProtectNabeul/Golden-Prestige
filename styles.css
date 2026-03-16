@@ -1,0 +1,544 @@
+/* =========================================================================
+   GOLDEN PRESTIGE - STYLESHEET
+   ========================================================================= */
+
+/* Typography & Variables */
+:root {
+    /* Colors */
+    --clr-bg: #0A0A0A;
+    --clr-bg-surface: #121212;
+    --clr-gold: #D4AF37;
+    --clr-gold-light: #F3E5AB;
+    --clr-gold-dark: #996515;
+    --clr-text: #F5F5F5;
+    --clr-text-muted: #A0A0A0;
+    --clr-whatsapp: #25D366;
+
+    /* Fonts */
+    --font-heading: 'Cinzel', serif;
+    --font-body: 'Montserrat', sans-serif;
+
+    /* Spacing & Sizes */
+    --section-padding: 6rem 2rem;
+    --transition-speed: 0.3s;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--clr-bg);
+    color: var(--clr-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+#nex{
+    color: var(--clr-gold);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* =========================================================================
+   NAVIGATION
+   ========================================================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1.5rem 0;
+    transition: all var(--transition-speed) ease;
+    background: transparent;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.nav-logo-img {
+    height: 50px;
+    /* Adjust size as needed based on the aspect ratio */
+    width: auto;
+    object-fit: contain;
+    transition: transform var(--transition-speed) ease;
+}
+
+.nav-logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    /* Matches the visual height of the 50px logo */
+    font-weight: 700;
+    color: var(--clr-gold);
+    letter-spacing: 2px;
+    line-height: 50px;
+    /* Vertically center exactly with the 50px logo */
+}
+
+.nav-logo-img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color var(--transition-speed) ease;
+    position: relative;
+}
+
+.nav-links a:not(.btn-primary)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--clr-gold);
+    transition: width var(--transition-speed);
+}
+
+.nav-links a:not(.btn-primary):hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--clr-gold);
+}
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--clr-gold);
+}
+
+/* Base Buttons */
+.btn-primary,
+.btn-outline,
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-primary {
+    background-color: var(--clr-gold);
+    color: var(--clr-bg);
+    border: 1px solid var(--clr-gold);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--clr-gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--clr-gold);
+    border: 1px solid var(--clr-gold);
+}
+
+.btn-outline:hover {
+    background-color: var(--clr-gold);
+    color: var(--clr-bg);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-whatsapp {
+    background-color: var(--clr-whatsapp);
+    color: white;
+    border: 1px solid var(--clr-whatsapp);
+}
+
+.btn-whatsapp:hover {
+    background-color: transparent;
+    color: var(--clr-whatsapp);
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+}
+
+/* =========================================================================
+   HERO SECTION
+   ========================================================================= */
+.hero {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-image: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.8)), url('https://images.unsplash.com/photo-1542151605-6fce201b1ae0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(10, 10, 10, 0.2) 0%, rgba(10, 10, 10, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    color: var(--clr-gold);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.4rem;
+    color: var(--clr-text);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* =========================================================================
+   COLLECTION SECTION
+   ========================================================================= */
+.collection {
+    padding: var(--section-padding);
+    background-color: var(--clr-bg-surface);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: var(--clr-gold);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.divider {
+    height: 2px;
+    width: 60px;
+    background-color: var(--clr-gold);
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background-color: var(--clr-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    group: item;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.img-placeholder {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover .img-placeholder {
+    transform: scale(1.05);
+}
+
+.item-details {
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to top, var(--clr-bg), transparent);
+}
+
+.item-details h3 {
+    color: var(--clr-text);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.item-details p {
+    color: var(--clr-text);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* =========================================================================
+   CTA / CONTACT SECTION
+   ========================================================================= */
+.cta-section {
+    padding: var(--section-padding);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a subtle glow behind CTA */
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.glass-panel {
+    background: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 4rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 700px;
+    z-index: 1;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.cta-box h2 {
+    font-size: 2.2rem;
+    color: var(--clr-gold);
+    margin-bottom: 1.5rem;
+}
+
+.cta-box p {
+    color: var(--clr-text-muted);
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.btn-whatsapp.large {
+    font-size: 1.1rem;
+    padding: 1rem 2.5rem;
+}
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+footer {
+    background-color: var(--clr-bg-surface);
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--clr-gold);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.social-links {
+    margin-bottom: 1.5rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--clr-text);
+    font-size: 1.2rem;
+    transition: all var(--transition-speed);
+}
+
+.social-links a:hover {
+    background-color: var(--clr-gold);
+    color: var(--clr-bg);
+    transform: translateY(-3px);
+}
+
+footer p {
+    color: var(--clr-text-muted);
+    font-size: 0.8rem;
+}
+
+/* =========================================================================
+   ANIMATIONS & EFFECTS
+   ========================================================================= */
+
+/* Initial states for JS observer */
+.fade-in-up,
+.slide-in,
+.zoom-in,
+.reveal-up {
+    opacity: 0;
+}
+
+.fade-in-up {
+    transform: translateY(30px);
+}
+
+.slide-in {
+    transform: translateX(-30px);
+}
+
+.zoom-in {
+    transform: scale(0.95);
+}
+
+.reveal-up {
+    transform: translateY(50px);
+}
+
+/* Animated states */
+.is-visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Delays */
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+@media (max-width: 768px) {
+    .nav-logo-text {
+        display: none;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background-color: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        transition: right 0.4s ease;
+        border-left: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        z-index: 1001;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .glass-panel {
+        padding: 2.5rem 1.5rem;
+    }
+}
